@@ -10,244 +10,161 @@
 }
 
 :root {
-  /* Colors */
-  --black: #000b0f;
-  --white: #f3fcff;
-
   /* Typography */
-  --ff-sans: 'Inter', sans-serif;
-  --fw-light: 300;
-  --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-semibold: 600;
-  --fw-bold: 700;
-  --fw-black: 900;
+  --ff-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-html {
+body {
   font-family: var(--ff-sans);
-  color: var(--white);
-}
-
-h1,
-h2,
-h2 {
-  font-weight: var(--fw-regular);
-  line-height: 1.1;
-}
-
-.navigation-panel {
-  position: fixed;
-  top: 50%;
-  left: 2%;
-  transform: translateY(-50%);
-  animation: fade-in 6s;
-}
-
-.navigation-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  list-style: none;
-  background-color: var(--white);
-  padding: 2rem 1rem;
-  border-radius: 9999px;
-}
-
-.navigation__link {
-  display: grid;
-  place-content: center;
+  background: linear-gradient(to bottom, #4caac1, #081c8d) no-repeat;
+  min-height: 100dvh;
 }
 
 .container {
+  max-width: 320px;
   margin-inline: auto;
-  max-width: 1220px;
+}
+
+.profile {
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+  color: #f7f7f7;
+}
+
+.profile img {
+  border-radius: 9999px;
+}
+
+.profile h1 {
+  margin-top: 0.75rem;
+  font-size: 1.7rem;
+}
+
+.profile p {
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.link-list {
   display: grid;
   place-content: center;
-  height: 100dvh;
+  place-items: center;
+  gap: 1rem;
+  list-style-type: none;
+  margin-top: 0.75rem;
 }
 
-.banner {
-  font-weight: var(--fw-black);
-  letter-spacing: 2px;
-  font-size: 8rem;
-  text-transform: uppercase;
-  background-image: url(/banner-img.png);
-  background-size: cover;
-  background-position: 50%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  animation: slide-in 4s;
-  overflow: hidden;
-}
-
-.bg--dark {
-  background-color: var(--black);
-}
-
-.identity {
-  display: grid;
-  place-content: end;
-  place-items: end;
-  gap: 0.5rem;
-  animation: slide-down 2s;
-  overflow: hidden;
-  margin-top: 0.5rem;
-}
-
-.identity__name {
-  font-weight: var(--fw-semibold);
-  font-size: 2rem;
-}
-
-.identity__role {
-  font-weight: var(--fw-medium);
-  font-size: 1.1rem;
-  font-style: italic;
-}
-
-.next-action {
-  position: absolute;
-  bottom: 3%;
-  left: 50%;
-  transform: translateX(-50%);
+.list-item a {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.25rem;
-  color: var(--white);
+  padding: 0.5rem 0.75rem;
+  border: solid 2px #f7f7f7;
+  border-radius: 9999px;
+  width: calc(320px - 50px);
   text-decoration: none;
-  font-weight: var(--fw-light);
-  transition: font-weight 50ms ease-in-out;
-  animation: fade-in 6s;
+  color: #f7f7f7;
+  cursor: pointer;
 }
 
-.next-action:hover {
-  font-weight: var(--fw-regular);
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-size: cover;
 }
 
-@keyframes slide-in {
-  from {
-    margin-left: 200%;
-  }
-  40% {
-    margin-left: 120%;
-  }
-  to {
-    margin-left: 0;
-  }
+.instagram-icon {
+  background-image: url(/assets/instagram.svg);
 }
 
-@keyframes slide-down {
-  from {
-    margin-bottom: 300%;
-  }
-  30% {
-    margin-bottom: 300%;
-  }
-  to {
-    margin-bottom: 0;
-  }
+.github-icon {
+  background-image: url(/assets/github.svg);
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.facebook-icon {
+  background-image: url(/assets/facebook.svg);
 }
 
-@media screen and (max-width: 1280px) {
-  .banner {
-    font-size: 7rem;
-  }
+.linkedin-icon {
+  background-image: url(/assets/linkedin.svg);
 }
 
-@media screen and (max-width: 1120px) {
-  .banner {
-    font-size: 6rem;
-  }
+.discord-icon {
+  background-image: url(/assets/discord.svg);
 }
 
-@media screen and (max-width: 800px) {
-  .banner {
-    font-size: 4.5rem;
-  }
-  .identity__name {
-    font-size: 1.7rem;
-  }
-  .identity__role {
-    font-size: 1.1rem;
-  }
-  .navigation-list {
-    padding: 1.5rem 0.5rem;
-  }
-  .navigation__svg {
-    width: 24px;
-    height: 24px;
-  }
+.hevy-icon {
+  background-image: url(/assets/hevy.svg);
 }
 
-@media screen and (max-width: 430px) {
-  .banner {
-    font-size: 2.175rem;
-  }
-  .identity {
-    gap: 0.25rem;
-  }
-  .identity__name {
-    font-size: 1.135rem;
-  }
-  .identity__role {
-    font-size: 0.875rem;
-  }
-  .navigation-list {
-    padding: 1.315rem 0.375rem;
-  }
-  .navigation__svg {
-    width: 20px;
-    height: 20px;
+.filler__hidden {
+  color: transparent;
+}
+
+.list-item a:hover {
+  background-color: #f7f7f7;
+}
+
+.list-item a:hover span {
+  color: #081c8d;
+  font-weight: 500;
+}
+
+.list-item a:hover .instagram-icon,
+.list-item a:hover .github-icon,
+.list-item a:hover .facebook-icon,
+.list-item a:hover .linkedin-icon,
+.list-item a:hover .discord-icon,
+.list-item a:hover .hevy-icon {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(50%) saturate(5242%)
+    hue-rotate(231deg) brightness(85%) contrast(114%);
+}
+
+footer {
+  text-align: center;
+  margin-top: 1.25rem;
+  padding: 1rem;
+}
+
+footer p {
+  color: #f7f7f7;
+  font-size: 0.875rem;
+}
+
+@media screen and (min-width: 360px) {
+  .list-item a {
+    width: calc(360px - 50px);
   }
 }
 
-@media screen and (max-width: 390px) {
-  .banner {
-    font-size: 2rem;
+@media screen and (min-width: 410px) {
+  .list-item a {
+    width: calc(410px - 50px);
   }
-  .identity__name {
-    font-size: 1rem;
-  }
-  .identity__role {
-    font-size: 0.8rem;
-  }
-  .navigation-list {
-    padding: 1.2rem 0.3rem;
-  }
-  .navigation__svg {
-    width: 16px;
-    height: 16px;
+  footer {
+    position: absolute;
+    bottom: 2.5%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
-@media screen and (max-width: 360px) {
-  .banner {
-    font-size: 1.75rem;
+@media screen and (min-width: 520px) {
+  .list-item a {
+    width: calc(520px - 50px);
   }
-  .identity__name {
-    font-size: 0.875rem;
+}
+
+@media screen and (min-width: 672px) {
+  .list-item a {
+    width: calc(672px - 50px);
   }
-  .identity__role {
-    font-size: 0.75rem;
-  }
-  .navigation-list {
-    padding: 1.1rem 0.3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .list-item a {
+    width: calc(768px - 70px);
   }
 }
